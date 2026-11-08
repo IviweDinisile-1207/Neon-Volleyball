@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=VT323&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>NEON // VOLLEY</title>
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <div class="stage">
+        <div class="title-bar">
+            <div class="title-left">
+                <span class="dot"></span>
+                <span class="title-text">NEON // VOLLEY</span>
+            </div>
+            <div class="title-right">SYS.v1.0 — FIRST TO 03</div>
+        </div>
+
+        <div class="canvas-wrap">
+            <canvas id="gameCanvas" width="900" height="600"></canvas>
+
+            <div id="scoreboard" class="scoreboard">
+                <div class="score-cell p1">
+                    <div class="score-label">PLAYER 01</div>
+                    <div class="score-value" id="score1">0</div>
+                    <div class="score-keys">W A S D</div>
+                </div>
+                <div class="score-divider">
+                    <div class="countdown" id="countdown"></div>
+                    <div class="vs">VS</div>
+                </div>
+                <div class="score-cell p2">
+                    <div class="score-label">PLAYER 02</div>
+                    <div class="score-value" id="score2">0</div>
+                    <div class="score-keys">&larr; &uarr; &darr; &rarr;</div>
+                </div>
+            </div>
+
+            <div id="startOverlay" class="win-overlay">
+                <div class="win-frame">
+                    <div class="win-eyebrow">INSERT COIN — READY PLAYERS</div>
+                    <div class="win-title">NEON // VOLLEY</div>
+                    <div class="win-sub">P1 &mdash; W A S D &nbsp;//&nbsp; P2 &mdash; &larr; &uarr; &darr; &rarr;</div>
+                    <button id="startBtn" class="play-again">&gt; START MATCH</button>
+                </div>
+            </div>
+
+            <div id="winOverlay" class="win-overlay hidden">
+                <div class="win-frame">
+                    <div class="win-eyebrow">MATCH COMPLETE</div>
+                    <div class="win-title" id="winTitle">PLAYER 01 WINS</div>
+                    <div class="win-sub" id="winSub">FINAL SCORE — 03 : 00</div>
+                    <button id="playAgain" class="play-again">&gt; PLAY AGAIN</button>
+                </div>
+            </div>
+
+            <div id="flash" class="flash"></div>
+        </div>
+
+        <div class="status-bar">
+            <div class="status-left">
+                <span class="blink">&#9632;</span>
+                <span>ARENA ONLINE</span>
+            </div>
+            <div class="status-mid" id="lastEvent">READY</div>
+            <div class="status-right" id="speedReadout">BALL.V 1.00</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
